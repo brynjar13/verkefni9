@@ -17,7 +17,7 @@ main.appendChild(container)
  * - `/?category=X` birtir yfirlit fyrir flokk `X`
  */
 function route() {
-  fetchAndRenderCategory('ithrottir', main)
+  fetchAndRenderLists(container, CATEGORY_ITEMS_ON_FRONTPAGE)
   // Athugum hvort það sé verið að biðja um category í URL, t.d.
   // /?category=menning
 
