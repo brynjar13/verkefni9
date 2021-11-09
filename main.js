@@ -2,7 +2,7 @@
 
 import { fetchNews } from './lib/news.js';
 import { el } from './lib/helpers.js';
-import { fetchAndRenderLists } from './lib/ui.js';
+import { fetchAndRenderCategory, fetchAndRenderLists } from './lib/ui.js';
 
 /** Fjöldi frétta til að birta á forsíðu */
 const CATEGORY_ITEMS_ON_FRONTPAGE = 5;
@@ -17,7 +17,7 @@ main.appendChild(container)
  * - `/?category=X` birtir yfirlit fyrir flokk `X`
  */
 function route() {
-  fetchAndRenderLists(container, 5)
+  fetchAndRenderCategory('ithrottir', main)
   // Athugum hvort það sé verið að biðja um category í URL, t.d.
   // /?category=menning
 
@@ -35,15 +35,5 @@ window.onpopstate = () => {
 };
 
 
-// 
-// async function prufa2(max) {
-//   const menning = await fetchNews('menning');
-//   for (let i = 0; i<max; i++) {
-//     const frettir = el('p', menning.items[i].title);
-//     frettir.classList.add('news_p')
-//     main.append(frettir);
-//   }
-// }
-// prufa2(10);
 // Í fyrsta skipti sem vefur er opnaður birtum við það sem beðið er um út frá URL
 route();
