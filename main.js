@@ -1,16 +1,15 @@
 // TODO importa því sem nota þarf
 
-import { fetchNews } from './lib/news.js';
 import { el, empty} from './lib/helpers.js';
-import { fetchAndRenderCategory, fetchAndRenderLists, handleCategoryClick } from './lib/ui.js';
+import { fetchAndRenderLists, handleCategoryClick } from './lib/ui.js';
 
 /** Fjöldi frétta til að birta á forsíðu */
 const CATEGORY_ITEMS_ON_FRONTPAGE = 5;
 /** Vísun í <main> sem geymir allt efnið og við búum til element inn í */
 const main = document.querySelector('main');
-const container = el('div')
-container.classList.add('newsList__list')
-main.appendChild(container)
+const container = el('div');
+container.classList.add('newsList__list');
+main.appendChild(container);
 /**
  * Athugar útfrá url (`window.location`) hvað skal birta:
  * - `/` birtir yfirlit
