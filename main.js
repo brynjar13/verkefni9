@@ -1,7 +1,7 @@
 // TODO importa því sem nota þarf
 
 import { fetchNews } from './lib/news.js';
-import { el } from './lib/helpers.js';
+import { el, empty } from './lib/helpers.js';
 import { fetchAndRenderCategory, fetchAndRenderLists } from './lib/ui.js';
 
 /** Fjöldi frétta til að birta á forsíðu */
@@ -31,7 +31,9 @@ function route() {
  * vafra. Sjáum þá um að birta réttan skjá.
  */
 window.onpopstate = () => {
-  // TODO útfæra
+  empty(container);
+  
+  route();
 };
 
 
