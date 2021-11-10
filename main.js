@@ -1,6 +1,6 @@
 // TODO importa því sem nota þarf
 
-import { el, empty} from './lib/helpers.js';
+import { el, empty } from './lib/helpers.js';
 import { fetchAndRenderLists, handleCategoryClick } from './lib/ui.js';
 
 /** Fjöldi frétta til að birta á forsíðu */
@@ -35,10 +35,9 @@ function route() {
  */
 window.onpopstate = () => {
   empty(container);
-  
+
   route();
 };
-
 
 // Í fyrsta skipti sem vefur er opnaður birtum við það sem beðið er um út frá URL
 route();
